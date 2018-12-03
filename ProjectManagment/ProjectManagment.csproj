@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -123,19 +131,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accountant.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountantsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MarkersController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\RequirementsController.cs" />
+    <Compile Include="Controllers\TasksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Marker.cs" />
-    <Compile Include="Project.cs" />
+    <Compile Include="Models\Accountant.cs" />
+    <Compile Include="Models\Marker.cs" />
+    <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\Requirement.cs" />
+    <Compile Include="Models\Task.cs" />
+    <Compile Include="Models\Task_Requirement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Requirement.cs" />
-    <Compile Include="Task.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\DatabaseSQL.mdf" />
@@ -177,10 +192,33 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Markers\Create.cshtml" />
+    <Content Include="Views\Markers\Delete.cshtml" />
+    <Content Include="Views\Markers\Details.cshtml" />
+    <Content Include="Views\Markers\Edit.cshtml" />
+    <Content Include="Views\Markers\Index.cshtml" />
+    <Content Include="Views\Requirements\Create.cshtml" />
+    <Content Include="Views\Requirements\Delete.cshtml" />
+    <Content Include="Views\Requirements\Details.cshtml" />
+    <Content Include="Views\Requirements\Edit.cshtml" />
+    <Content Include="Views\Requirements\Index.cshtml" />
+    <Content Include="Views\Tasks\Create.cshtml" />
+    <Content Include="Views\Tasks\Delete.cshtml" />
+    <Content Include="Views\Tasks\Details.cshtml" />
+    <Content Include="Views\Tasks\Edit.cshtml" />
+    <Content Include="Views\Tasks\Index.cshtml" />
+    <Content Include="Views\Accountants\Create.cshtml" />
+    <Content Include="Views\Accountants\Delete.cshtml" />
+    <Content Include="Views\Accountants\Details.cshtml" />
+    <Content Include="Views\Accountants\Edit.cshtml" />
+    <Content Include="Views\Accountants\Index.cshtml" />
+    <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Projects\Delete.cshtml" />
+    <Content Include="Views\Projects\Details.cshtml" />
+    <Content Include="Views\Projects\Edit.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

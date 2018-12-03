@@ -13,18 +13,14 @@ namespace ProjectManagment.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Projects()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return View("Projects");
         }
 
-        public ActionResult Contact()
+        public ActionResult Accountants()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View("Accountants");
         }
     }
 }

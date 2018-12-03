@@ -85,3 +85,7 @@ C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\obj\Debug\Projec
 C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\obj\Debug\ProjectManagment.csproj.CopyComplete
 C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\obj\Debug\ProjectManagment.dll
 C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\obj\Debug\ProjectManagment.pdb
+C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\bin\EntityFramework.dll
+C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\bin\EntityFramework.SqlServer.dll
+C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\bin\EntityFramework.xml
+C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\bin\EntityFramework.SqlServer.xml
