@@ -12,14 +12,18 @@ namespace ProjectManagment.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
+        [Display(Name = "Requirement ID")]
         public int reqId { get; set; }
 
+        [Display(Name = "Detail")]
         [Column(TypeName = "text")]
         [Required]
         public string detail { get; set; }
 
+        [Display(Name = "Type")]
         public int? type { get; set; }
 
+        [Display(Name = "Project")]
         public int id_project { get; set; }
     }
 }

@@ -12,19 +12,26 @@ namespace ProjectManagment.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
+        [Display(Name = "Task Id")]
         public int taskId { get; set; }
 
+        [Display(Name = "Accountant")]
         public int id_accountant { get; set; }
 
+        [Display(Name = "Scheduled Start Date")]
         [Column(TypeName = "date")]
         public DateTime scheduled_start_date { get; set; }
 
+        [Display(Name = "Work Load (Man Hours)")]
         public int work_load { get; set; }
 
+        [Display(Name = "Previous Task Id")]
         public int? required_taskID { get; set; }
 
+        [Display(Name = "Status")]
         public int status { get; set; }
 
+        [Display(Name = "Real Start Date")]
         [Column(TypeName = "date")]
         public DateTime real_start_date { get; set; }
     }

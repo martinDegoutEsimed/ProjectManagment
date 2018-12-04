@@ -12,6 +12,7 @@ namespace ProjectManagment.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
+        [Display(Name = "Name")]
         [StringLength(50)]
         public string name { get; set; }
     }

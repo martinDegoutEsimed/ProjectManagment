@@ -12,15 +12,19 @@ namespace ProjectManagment.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
+        [Display(Name = "Label")]
         [Required]
         [StringLength(50)]
         public string label { get; set; }
 
+        [Display(Name = "Best End Date")]
         [Column(TypeName = "date")]
         public DateTime best_end_date { get; set; }
 
+        [Display(Name = "Accountant")]
         public int id_accountant { get; set; }
 
+        [Display(Name = "Real End Date")]
         [Column(TypeName = "date")]
         public DateTime? real_end_date { get; set; }
     }

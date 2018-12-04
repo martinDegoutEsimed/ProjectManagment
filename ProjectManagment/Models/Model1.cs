@@ -18,6 +18,8 @@ namespace ProjectManagment.Models
         public virtual DbSet<Accountant> Accountant { get; set; }
         public virtual DbSet<Project> Project { get; set; }
         public virtual DbSet<Task_Requirement> Task_Requirement { get; set; }
+        public virtual DbSet<accountantname> accountantname { get; set; }
+        public virtual DbSet<projectname> projectname { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -38,6 +40,18 @@ namespace ProjectManagment.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Project>()
+                .Property(e => e.trigram)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<accountantname>()
+                .Property(e => e.name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<projectname>()
+                .Property(e => e.name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<projectname>()
                 .Property(e => e.trigram)
                 .IsUnicode(false);
         }

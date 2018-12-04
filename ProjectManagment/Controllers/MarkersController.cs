@@ -115,6 +115,19 @@ namespace ProjectManagment.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Accountants()
+        {
+
+
+            var items = db.accountantname.ToList();
+            if (items != null)
+            {
+                ViewBag.data = items;
+            }
+
+            return View();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
