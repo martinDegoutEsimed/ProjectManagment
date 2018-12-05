@@ -17,7 +17,12 @@ namespace ProjectManagment.Controllers
         // GET: Markers
         public ActionResult Index()
         {
-            return View(db.Marker.ToList());
+            List<Marker> markerList = db.Marker.ToList();
+            foreach(Marker merker in markerList)
+            {
+                merker.accountantName = db.Accountant.Find(merker.id_accountant).name;
+            }
+            return View(markerList);
         }
 
         // GET: Markers/Details/5
@@ -32,12 +37,15 @@ namespace ProjectManagment.Controllers
             {
                 return HttpNotFound();
             }
+            marker.accountantName = db.Accountant.Find(marker.id_accountant).name;
             return View(marker);
         }
 
         // GET: Markers/Create
         public ActionResult Create()
         {
+            ViewBag.test = db.Accountant.ToList<Accountant>();
+            
             return View();
         }
 
@@ -47,7 +55,7 @@ namespace ProjectManagment.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id,label,best_end_date,id_accountant,real_end_date")] Marker marker)
-        {
+        {                   
             if (ModelState.IsValid)
             {
                 db.Marker.Add(marker);
@@ -70,6 +78,7 @@ namespace ProjectManagment.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.test = db.Accountant.ToList<Accountant>();
             return View(marker);
         }
 
@@ -115,18 +124,15 @@ namespace ProjectManagment.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Accountants()
-        {
+        //[HttpGet]
+        //public ActionResult ListAccountants()
+        //{
+        //    var accountants = db.Accountant.ToList();
 
+        //    var viewModel = new ViewModelMarker { Accountants = accountants };
 
-            var items = db.accountantname.ToList();
-            if (items != null)
-            {
-                ViewBag.data = items;
-            }
-
-            return View();
-        }
+        //    return View(viewModel);
+        //}
 
         protected override void Dispose(bool disposing)
         {

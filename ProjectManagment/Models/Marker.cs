@@ -5,6 +5,7 @@ namespace ProjectManagment.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     [Table("Marker")]
     public partial class Marker
@@ -23,6 +24,12 @@ namespace ProjectManagment.Models
 
         [Display(Name = "Accountant")]
         public int id_accountant { get; set; }
+
+        [NotMapped]
+        public List<Accountant> AccountantList { get; set; }
+
+        [NotMapped]
+        public string accountantName { get; set; }
 
         [Display(Name = "Real End Date")]
         [Column(TypeName = "date")]

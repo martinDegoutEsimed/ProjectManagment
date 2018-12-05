@@ -80,7 +80,6 @@ C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\bin\fr\System.We
 C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\bin\fr\System.Web.WebPages.resources.dll
 C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\bin\fr\System.Web.WebPages.Deployment.resources.dll
 C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\bin\fr\System.Web.WebPages.Razor.resources.dll
-C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\obj\Debug\ProjectManagment.csprojAssemblyReference.cache
 C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\obj\Debug\ProjectManagment.csproj.CoreCompileInputs.cache
 C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\obj\Debug\ProjectManagment.csproj.CopyComplete
 C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\obj\Debug\ProjectManagment.dll
@@ -89,3 +88,4 @@ C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\bin\EntityFramew
 C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\bin\EntityFramework.SqlServer.dll
 C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\bin\EntityFramework.xml
 C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\bin\EntityFramework.SqlServer.xml
+C:\Users\mdegout\source\repos\ProjectManagment\ProjectManagment\obj\Debug\ProjectManagment.csprojAssemblyReference.cache
