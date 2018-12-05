@@ -18,6 +18,12 @@ namespace ProjectManagment.Models
         [Display(Name = "Accountant")]
         public int id_accountant { get; set; }
 
+        [NotMapped]
+        public List<Accountant> AccountantList { get; set; }
+
+        [NotMapped]
+        public string accountantName { get; set; }
+
         [Display(Name = "Scheduled Start Date")]
         [Column(TypeName = "date")]
         public DateTime scheduled_start_date { get; set; }
@@ -29,7 +35,7 @@ namespace ProjectManagment.Models
         public int? required_taskID { get; set; }
 
         [Display(Name = "Status")]
-        public int status { get; set; }
+        public string status { get; set; }
 
         [Display(Name = "Real Start Date")]
         [Column(TypeName = "date")]

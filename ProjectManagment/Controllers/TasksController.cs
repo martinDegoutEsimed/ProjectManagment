@@ -17,7 +17,12 @@ namespace ProjectManagment.Controllers
         // GET: Tasks
         public ActionResult Index()
         {
-            return View(db.Task.ToList());
+            List<Task> taskList = db.Task.ToList();
+            foreach(Task tesk in taskList)
+            {
+                tesk.accountantName = db.Accountant.Find(tesk.id_accountant).name;
+            }
+            return View(taskList);
         }
 
         // GET: Tasks/Details/5
@@ -32,12 +37,21 @@ namespace ProjectManagment.Controllers
             {
                 return HttpNotFound();
             }
+            task.accountantName = db.Accountant.Find(task.id_accountant).name;
             return View(task);
         }
 
         // GET: Tasks/Create
         public ActionResult Create()
         {
+            ViewBag.test = db.Accountant.ToList<Accountant>();
+
+            List<Task> taskList = db.Task.ToList<Task>();
+            List<int> taskIDSList = new List<int>();
+            foreach(Task tesk in taskList)
+            {
+                taskIDSList.Add(tesk.taskId);
+            }
             return View();
         }
 
@@ -70,6 +84,7 @@ namespace ProjectManagment.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.test = db.Accountant.ToList<Accountant>();
             return View(task);
         }
 
@@ -101,6 +116,7 @@ namespace ProjectManagment.Controllers
             {
                 return HttpNotFound();
             }
+            task.accountantName = db.Accountant.Find(task.id_accountant).name;
             return View(task);
         }
 

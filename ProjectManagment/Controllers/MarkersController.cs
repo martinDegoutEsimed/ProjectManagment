@@ -110,6 +110,7 @@ namespace ProjectManagment.Controllers
             {
                 return HttpNotFound();
             }
+            marker.accountantName = db.Accountant.Find(marker.id_accountant).name;
             return View(marker);
         }
 
