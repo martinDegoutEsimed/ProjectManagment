@@ -7,3 +7,4 @@
 .vs/ProjectManagment/v15/Server/sqlite3/storage.ide-wal
 ProjectManagment/App_Data/ProjectManagmentContext-20181203125835.mdf
 ProjectManagment/App_Data/ProjectManagmentContext-20181203125835_log.ldf
+*.mdf
