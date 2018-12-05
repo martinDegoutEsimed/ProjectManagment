@@ -17,7 +17,12 @@ namespace ProjectManagment.Controllers
         // GET: Requirements
         public ActionResult Index()
         {
-            return View(db.Requirement.ToList());
+            List<Requirement> reqList = db.Requirement.ToList();
+            foreach (Requirement req in reqList)
+            {
+                req.projectName = db.Project.Find(req.id_project).name;
+            }
+            return View(reqList);
         }
 
         // GET: Requirements/Details/5
@@ -32,12 +37,14 @@ namespace ProjectManagment.Controllers
             {
                 return HttpNotFound();
             }
+            requirement.projectName = db.Project.Find(requirement.id_project).name;
             return View(requirement);
         }
 
         // GET: Requirements/Create
         public ActionResult Create()
         {
+            ViewBag.test = db.Project.ToList<Project>();
             return View();
         }
 
@@ -70,6 +77,7 @@ namespace ProjectManagment.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.test = db.Project.ToList<Project>();
             return View(requirement);
         }
 
@@ -101,6 +109,7 @@ namespace ProjectManagment.Controllers
             {
                 return HttpNotFound();
             }
+            requirement.projectName = db.Project.Find(requirement.id_project).name;
             return View(requirement);
         }
 

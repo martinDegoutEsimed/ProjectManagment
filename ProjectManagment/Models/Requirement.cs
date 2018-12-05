@@ -21,9 +21,15 @@ namespace ProjectManagment.Models
         public string detail { get; set; }
 
         [Display(Name = "Type")]
-        public int? type { get; set; }
+        public string type { get; set; }
 
         [Display(Name = "Project")]
         public int id_project { get; set; }
+
+        [NotMapped]
+        public List<Project> ProjectList { get; set; }
+
+        [NotMapped]
+        public string projectName { get; set; }
     }
 }

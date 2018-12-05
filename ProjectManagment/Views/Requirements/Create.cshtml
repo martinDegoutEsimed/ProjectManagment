@@ -42,7 +42,15 @@
         <div class="form-group">
             @Html.LabelFor(model => model.type, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.type, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.type, new List<SelectListItem>
+                {
+                    new SelectListItem{ Text="Functionnal", Value = "Functionnal" },
+                    new SelectListItem{ Text="Non Functionnal - Data", Value = "Non Functionnal - Data" },
+                    new SelectListItem{ Text="Non Functionnal - Performances", Value = "Non Functionnal - Performances" },
+                    new SelectListItem{ Text="Non Functionnal - UI", Value = "Non Functionnal - UI" },
+                    new SelectListItem{ Text="Non Functionnal - Quality", Value = "Non Functionnal - Quality" },
+                    new SelectListItem{ Text="Non Functionnal - Services", Value = "Non Functionnal - Services" },
+                }, "Select",  new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.type, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -50,7 +58,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.id_project, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.id_project, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.id_project, new SelectList(ViewBag.test, "id", "name"), "Select", new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.id_project, "", new { @class = "text-danger" })
             </div>
         </div>

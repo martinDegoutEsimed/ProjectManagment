@@ -71,7 +71,7 @@
                     new SelectListItem{ Text="Not Started", Value = "Not Started" },
                     new SelectListItem{ Text="Started", Value = "Started" },
                     new SelectListItem{ Text="Finished", Value = "Finished" },
-                }, new { htmlAttributes = new { @class = "form-control" } })
+                }, "Select", new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
             </div>
         </div>
