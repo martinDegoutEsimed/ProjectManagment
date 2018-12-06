@@ -21,6 +21,7 @@ namespace ProjectManagment.Controllers
             foreach (Requirement req in reqList)
             {
                 req.projectName = db.Project.Find(req.id_project).name;
+                req.taskIdentifier = db.Task.Find(req.task_ID).taskId;
             }
             return View(reqList);
         }
@@ -38,6 +39,7 @@ namespace ProjectManagment.Controllers
                 return HttpNotFound();
             }
             requirement.projectName = db.Project.Find(requirement.id_project).name;
+            requirement.taskIdentifier = db.Task.Find(requirement.task_ID).taskId;
             return View(requirement);
         }
 
@@ -45,6 +47,7 @@ namespace ProjectManagment.Controllers
         public ActionResult Create()
         {
             ViewBag.test = db.Project.ToList<Project>();
+            ViewBag.teest = db.Task.ToList<Task>();
             return View();
         }
 
@@ -53,7 +56,7 @@ namespace ProjectManagment.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,reqId,detail,type,id_project")] Requirement requirement)
+        public ActionResult Create([Bind(Include = "id,reqId,detail,type,id_project,task_ID")] Requirement requirement)
         {
             if (ModelState.IsValid)
             {
@@ -78,6 +81,7 @@ namespace ProjectManagment.Controllers
                 return HttpNotFound();
             }
             ViewBag.test = db.Project.ToList<Project>();
+            ViewBag.teest = db.Task.ToList<Task>();
             return View(requirement);
         }
 
@@ -86,7 +90,7 @@ namespace ProjectManagment.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,reqId,detail,type,id_project")] Requirement requirement)
+        public ActionResult Edit([Bind(Include = "id,reqId,detail,type,id_project,task_ID")] Requirement requirement)
         {
             if (ModelState.IsValid)
             {
@@ -110,6 +114,7 @@ namespace ProjectManagment.Controllers
                 return HttpNotFound();
             }
             requirement.projectName = db.Project.Find(requirement.id_project).name;
+            requirement.taskIdentifier = db.Task.Find(requirement.task_ID).taskId;
             return View(requirement);
         }
 

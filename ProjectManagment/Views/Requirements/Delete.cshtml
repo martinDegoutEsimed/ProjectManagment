@@ -43,6 +43,14 @@
             @Html.DisplayFor(model => model.projectName)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.task_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.taskIdentifier)
+        </dd>
+
     </dl>
 
     @using (Html.BeginForm()) {

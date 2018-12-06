@@ -23,6 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.id_project)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.task_ID)
+        </th>
         <th></th>
     </tr>
 
@@ -39,6 +42,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.projectName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.taskIdentifier)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |

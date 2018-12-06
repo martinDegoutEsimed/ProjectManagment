@@ -31,5 +31,14 @@ namespace ProjectManagment.Models
 
         [NotMapped]
         public string projectName { get; set; }
+
+        [Display(Name = "Task")]
+        public int task_ID { get; set; }
+
+        [NotMapped]
+        public List<Task> TaskList { get; set; }
+
+        [NotMapped]
+        public string taskIdentifier { get; set; }
     }
 }
