@@ -47,7 +47,7 @@ namespace ProjectManagment.Controllers
             ViewBag.test = db.Accountant.ToList<Accountant>();
 
             List<Task> taskList = db.Task.ToList<Task>();
-            List<int> taskIDSList = new List<int>();
+            List<string> taskIDSList = new List<string>();
             foreach(Task tesk in taskList)
             {
                 taskIDSList.Add(tesk.taskId);

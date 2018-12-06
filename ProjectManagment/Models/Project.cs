@@ -19,5 +19,14 @@ namespace ProjectManagment.Models
         [Display(Name = "Trigram")]
         [StringLength(50)]
         public string trigram { get; set; }
+
+        [Display(Name = "Accountant")]
+        public int id_accountant { get; set; }
+
+        [NotMapped]
+        public List<Accountant> AccountantList { get; set; }
+
+        [NotMapped]
+        public string accountantName { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace ProjectManagment.Models
         public int id { get; set; }
 
         [Display(Name = "Task Id")]
-        public int taskId { get; set; }
+        public string taskId { get; set; }
 
         [Display(Name = "Accountant")]
         public int id_accountant { get; set; }

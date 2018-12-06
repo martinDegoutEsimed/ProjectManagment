@@ -17,7 +17,12 @@ namespace ProjectManagment.Controllers
         // GET: Projects
         public ActionResult Index()
         {
-            return View(db.Project.ToList());
+            List<Project> projectList = db.Project.ToList();
+            foreach(Project preject in projectList)
+            {
+                preject.accountantName = db.Accountant.Find(preject.id_accountant).name;
+            }
+            return View(projectList);
         }
 
         // GET: Projects/Details/5
@@ -32,12 +37,14 @@ namespace ProjectManagment.Controllers
             {
                 return HttpNotFound();
             }
+            project.accountantName = db.Accountant.Find(project.id_accountant).name;
             return View(project);
         }
 
         // GET: Projects/Create
         public ActionResult Create()
         {
+            ViewBag.test = db.Accountant.ToList<Accountant>();
             return View();
         }
 
@@ -46,7 +53,7 @@ namespace ProjectManagment.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,name,trigram")] Project project)
+        public ActionResult Create([Bind(Include = "id,name,trigram,id_accountant")] Project project)
         {
             if (ModelState.IsValid)
             {
@@ -70,6 +77,7 @@ namespace ProjectManagment.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.test = db.Accountant.ToList<Accountant>();
             return View(project);
         }
 
@@ -78,7 +86,7 @@ namespace ProjectManagment.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,name,trigram")] Project project)
+        public ActionResult Edit([Bind(Include = "id,name,trigram,id_accountant")] Project project)
         {
             if (ModelState.IsValid)
             {
@@ -101,6 +109,7 @@ namespace ProjectManagment.Controllers
             {
                 return HttpNotFound();
             }
+            project.accountantName = db.Accountant.Find(project.id_accountant).name;
             return View(project);
         }
 

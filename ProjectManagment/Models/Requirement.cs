@@ -13,7 +13,7 @@ namespace ProjectManagment.Models
         public int id { get; set; }
 
         [Display(Name = "Requirement ID")]
-        public int reqId { get; set; }
+        public string reqId { get; set; }
 
         [Display(Name = "Detail")]
         [Column(TypeName = "text")]
