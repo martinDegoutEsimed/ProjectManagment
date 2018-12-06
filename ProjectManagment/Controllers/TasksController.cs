@@ -21,6 +21,7 @@ namespace ProjectManagment.Controllers
             foreach(Task tesk in taskList)
             {
                 tesk.accountantName = db.Accountant.Find(tesk.id_accountant).name;
+                tesk.requirementIdentifier = db.Requirement.Find(tesk.requirement_ID).reqId;
             }
             return View(taskList);
         }
@@ -38,6 +39,7 @@ namespace ProjectManagment.Controllers
                 return HttpNotFound();
             }
             task.accountantName = db.Accountant.Find(task.id_accountant).name;
+            task.requirementIdentifier = db.Requirement.Find(task.requirement_ID).reqId;
             return View(task);
         }
 
@@ -45,13 +47,8 @@ namespace ProjectManagment.Controllers
         public ActionResult Create()
         {
             ViewBag.test = db.Accountant.ToList<Accountant>();
-
-            List<Task> taskList = db.Task.ToList<Task>();
-            List<string> taskIDSList = new List<string>();
-            foreach(Task tesk in taskList)
-            {
-                taskIDSList.Add(tesk.taskId);
-            }
+            ViewBag.tesst = db.Requirement.ToList<Requirement>();
+            ViewBag.teesst = db.Task.ToList<Task>();
             return View();
         }
 
@@ -60,7 +57,7 @@ namespace ProjectManagment.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,taskId,id_accountant,scheduled_start_date,work_load,required_taskID,status,real_start_date")] Task task)
+        public ActionResult Create([Bind(Include = "id,taskId,id_accountant,requirement_ID,scheduled_start_date,work_load,required_taskID,status,real_start_date")] Task task)
         {
             if (ModelState.IsValid)
             {
@@ -85,6 +82,8 @@ namespace ProjectManagment.Controllers
                 return HttpNotFound();
             }
             ViewBag.test = db.Accountant.ToList<Accountant>();
+            ViewBag.tesst = db.Requirement.ToList<Requirement>();
+            ViewBag.teesst = db.Task.ToList<Task>();
             return View(task);
         }
 
@@ -93,7 +92,7 @@ namespace ProjectManagment.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,taskId,id_accountant,scheduled_start_date,work_load,required_taskID,status,real_start_date")] Task task)
+        public ActionResult Edit([Bind(Include = "id,taskId,id_accountant,requirment_ID,scheduled_start_date,work_load,required_taskID,status,real_start_date")] Task task)
         {
             if (ModelState.IsValid)
             {
@@ -117,6 +116,7 @@ namespace ProjectManagment.Controllers
                 return HttpNotFound();
             }
             task.accountantName = db.Accountant.Find(task.id_accountant).name;
+            task.requirementIdentifier = db.Requirement.Find(task.requirement_ID).reqId;
             return View(task);
         }
 

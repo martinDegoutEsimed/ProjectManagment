@@ -18,6 +18,9 @@
             @Html.DisplayNameFor(model => model.id_accountant)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.requirement_ID)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.scheduled_start_date)
         </th>
         <th>
@@ -44,6 +47,9 @@
             @Html.DisplayFor(modelItem => item.accountantName)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.requirementIdentifier)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.scheduled_start_date)
         </td>
         <td>
@@ -59,9 +65,9 @@
             @Html.DisplayFor(modelItem => item.real_start_date)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
         </td>
     </tr>
 }
