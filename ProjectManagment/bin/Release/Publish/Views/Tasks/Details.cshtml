@@ -1,0 +1,82 @@
+﻿@model ProjectManagment.Models.Task
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Task</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.taskId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.taskId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_accountant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.accountantName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.requirement_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.requirementIdentifier)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.scheduled_start_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.scheduled_start_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.work_load)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.work_load)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.required_taskID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.required_taskID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.real_start_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.real_start_date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

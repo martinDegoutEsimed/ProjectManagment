@@ -11,7 +11,7 @@ namespace ProjectManagment.Models
             : base("name=DbModel")
         {
         }
-
+        //Database.SetInitializer<Model1>(new CreateDatabaseIfNotExists<Model1>());
         public virtual DbSet<Marker> Marker { get; set; }
         public virtual DbSet<Requirement> Requirement { get; set; }
         public virtual DbSet<Task> Task { get; set; }

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ProjectManagment.Models.Task>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.taskId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_accountant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.requirement_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.scheduled_start_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.work_load)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.required_taskID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.real_start_date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.taskId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.accountantName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.requirementIdentifier)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.scheduled_start_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.work_load)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.required_taskID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.real_start_date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+        </td>
+    </tr>
+}
+
+</table>

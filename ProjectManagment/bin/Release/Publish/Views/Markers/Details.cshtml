@@ -1,0 +1,50 @@
+﻿@model ProjectManagment.Models.Marker
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Marker</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.label)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.label)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.best_end_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.best_end_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_accountant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.accountantName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.real_end_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.real_end_date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
